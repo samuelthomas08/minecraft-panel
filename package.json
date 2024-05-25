@@ -29,7 +29,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify-es": "^3.0.0",
     "gulp-uglifycss": "^1.1.0",
-    "node-sass": "^7.0.3",
+    "node-sass": "9.0",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1"
   }

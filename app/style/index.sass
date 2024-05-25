@@ -1,2 +1,252 @@
 @import design
 
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Radio Canada Big'
+
+body
+  height: 100vh
+  width: 100%
+  background-color: #FFC400
+
+.logo
+  width: 18rem
+  position: absolute
+  left: 50%
+  top: 4rem
+  transform: translate(-50%)
+
+  h1
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    font-size: 1.5rem
+
+img
+  width: 18rem
+
+.container
+  position: absolute
+  top: 20rem
+  left: 50%
+  transform: translate(-50%)
+  bottom: 6rem
+  display: flex
+  flex-direction: row
+  gap: 4rem
+  overflow: hidden
+
+.part01
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.basic
+  background-color: #ffd83b
+  padding: 2rem
+  border-radius: 2rem
+  display: flex
+  flex-direction: column
+  gap: 0.8rem
+  width: 25rem
+
+  p span
+    font-weight: bold
+
+.members
+  width: 25rem
+  height: 30rem
+  border-radius: 2rem
+  display: flex
+  flex-direction: column
+  gap: .75rem
+
+@media screen and (max-width: 2560px)
+  .members
+    height: 32rem
+
+@media screen and (max-width: 1920px)
+  .container
+    top: 16rem
+
+  .members
+    margin-top: 1rem
+
+.member-list
+  width: 25rem
+  height: 31rem
+  display: flex
+  flex-direction: column
+  gap: .75rem
+  overflow: scroll
+  overflow-x: hidden
+  padding-right: 1rem
+
+  &::-webkit-scrollbar
+    background-color: none
+    width: 10px
+    border-radius: 10rem
+
+  &::-webkit-scrollbar-thumb
+    background-color: #b78f0b
+    border-radius: 2rem
+
+  .member-item
+    width: 100%
+    padding: .75rem
+    height: 3.5rem
+    border-radius: 1rem
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: .75rem
+    background-color: #ffd83b
+
+    .player-title
+      display: flex
+      justify-content: space-between
+      width: 100%
+      padding-right: 1rem
+
+      .admin
+        font-weight: 900
+        color: #594709
+
+    img
+      height: 2rem
+      width: 2rem
+      border-radius: .5rem
+      display: flex
+      align-items: center
+      justify-content: center
+
+.backups
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  margin-left: 2rem
+  width: 20rem
+
+  .headline p
+    margin-top: 1rem
+
+  .backup-list
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    overflow: scroll
+    height: 48rem
+    overflow-x: hidden
+    padding-right: 1rem
+
+.backup-list
+  &::-webkit-scrollbar
+    background-color: none
+    width: 10px
+    border-radius: 10rem
+
+  &::-webkit-scrollbar-thumb
+    background-color: #b78f0b
+    border-radius: 2rem
+
+.backups .backup-list .item
+  background-color: #ffd83b
+  padding: 1.5rem
+  padding-left: 2rem
+  width: 22rem
+  border-radius: 2rem
+
+  .infos
+    display: flex
+    gap: 2rem
+
+  a
+    color: #594709
+    font-weight: 900
+    margin-top: 1rem
+
+.part03
+  margin-left: 2rem
+
+  .downloads
+    padding: 2rem
+    background-color: #0f1813
+    width: 25rem
+    border-radius: 2rem
+
+    h1
+      color: #1bd96a
+      display: flex
+      align-items: center
+      gap: .5rem
+
+    svg
+      fill: #1bd96a
+      width: 2rem
+      height: 2rem
+
+    .pack-view
+      display: flex
+      gap: .75rem
+      color: white
+      margin-top: 1rem
+
+      img
+        width: 4rem
+        height: 4rem
+        border-radius: 1rem
+
+      .text
+        margin-left: .5rem
+
+        .info
+          display: flex
+          gap: 1.5rem
+
+          a
+            color: #1bd96a
+
+  .tp
+    margin-top: 2rem
+
+  .tp-view
+    display: flex
+    gap: .75rem
+    margin-top: 1rem
+
+    img
+      width: 4rem
+      height: 4rem
+      border-radius: 1rem
+
+    .text
+      margin-left: .5rem
+
+      .info
+        display: flex
+        gap: 1.5rem
+
+        p
+          font-style: italic
+
+        a
+          font-weight: 900
+          color: black
+
+  .map
+    margin-top: 3rem
+    display: flex
+    flex-direction: column
+    gap: 1rem
+
+    a
+      color: black
+      font-weight: 900
+      text-decoration: none
+
+

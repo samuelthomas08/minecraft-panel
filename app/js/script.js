@@ -9,10 +9,12 @@ const backupListEl = document.querySelector('.backup-list');
 // Create a list with all members
 
 const playerList = [
-    {playerName: 'JuniorCoder', uuid: 'e44f919d-9ee9-43c5-832d-ed81a856baf0', admin: true},
-    {playerName: 'Ajdin1412', uuid: '8483c55d-d65c-4f5d-8337-23debe6e0cd5', admin: false},
-    {playerName: 'KPM_NONO', uuid: 'ce047b36-8ea3-4761-aa7e-d73241ecfb65', admin: false},
-    {playerName: 'Zorro_14', uuid: 'd2fa327c-a21b-48a5-8574-455b16f2b6dd', admin: false},
+    {playerName: 'JuniorCoder', name: 'Sam', uuid: 'e44f919d-9ee9-43c5-832d-ed81a856baf0', admin: true},
+    {playerName: 'Ajdin1412', name: 'Ajdin', uuid: '8483c55d-d65c-4f5d-8337-23debe6e0cd5', admin: true},
+    {playerName: 'KPM_NONO', name: 'Noah', uuid: 'ce047b36-8ea3-4761-aa7e-d73241ecfb65', admin: false},
+    {playerName: 'Zorro_14', name: 'Marcel', uuid: 'd2fa327c-a21b-48a5-8574-455b16f2b6dd', admin: false},
+    {playerName: 'MasterJojo2107', name: 'Jona', uuid: 'a36333c3-dde3-4104-8c9b-986f23568d62', admin: false},
+    {playerName: 'Bolzenschneiderr', name: 'Jano', uuid: '9819fc02-6cfc-48c9-a92f-ef609de5fcbc', admin: false},
 ]
 
 
@@ -40,7 +42,7 @@ playerList.forEach(element => {
     playerTitle.classList.add('player-title');
 
     const name = document.createElement('p');
-    name.innerHTML = element.playerName;
+    name.innerHTML = `${element.playerName} | ${element.name}`;
     name.classList.add('name');
 
     let adminTag;

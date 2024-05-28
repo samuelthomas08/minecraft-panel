@@ -15,13 +15,15 @@ const playerList = [
     {playerName: 'Zorro_14', name: 'Marcel', uuid: 'd2fa327c-a21b-48a5-8574-455b16f2b6dd', admin: false},
     {playerName: 'MasterJojo2107', name: 'Jona', uuid: 'a36333c3-dde3-4104-8c9b-986f23568d62', admin: false},
     {playerName: 'Bolzenschneiderr', name: 'Jano', uuid: '9819fc02-6cfc-48c9-a92f-ef609de5fcbc', admin: false},
+    {playerName: 'Pandicorn07', name: 'Lara', uuid: '5baf6696-1ec4-46ec-b1a3-8989e771db50', admin: false},
+    {playerName: 'Dzenan212', name: 'Dzenan', uuid: '18632fb6-2507-443e-8d0e-34d8c30b8d19', admin: false},
 ]
 
 
 // Create a list with all the backups
 
 const backupList = [
-    // {count: 1, date: '01.01.2000', size: 1.2, file: 'backup_0001'}
+    // {count: 1, date: '01.01.2000', size: 1.2, file: 'backup_0001'},
 ]
 
 // Reverse the list of backups, so the current one is always shown at first
@@ -79,6 +81,7 @@ backupList.forEach(element => {
     console.log(backupItem);
 
     const heading = document.createElement('h2');
+
     if(element.count < 10) {
         heading.innerText = `Backup #000${element.count}`;
     } else if (element.count < 100) {
@@ -96,17 +99,22 @@ backupList.forEach(element => {
     sizeEl.innerText = `${element.size}GB`;
     sizeEl.classList.add('size');
 
+    const infoBox = document.createElement('div');
+    infoBox.classList.add('info-box');
+
     infoContainer.appendChild(dateEl);
     infoContainer.appendChild(sizeEl);
+
+    infoBox.appendChild(heading);
+    infoBox.appendChild(infoContainer);
 
     const downloadLink = document.createElement('a');
     downloadLink.classList.add('download');
     downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Download'));
     downloadLink.setAttribute('download', `./assets/${element.file}`);
-    downloadLink.innerText = 'Download';
+    downloadLink.innerHTML = '<i class="fa-solid fa-download"></i>';
 
-    backupItem.appendChild(heading);
-    backupItem.appendChild(infoContainer);
+    backupItem.appendChild(infoBox);
     backupItem.appendChild(downloadLink);
     
 

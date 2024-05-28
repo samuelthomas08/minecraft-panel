@@ -17,6 +17,7 @@ const playerList = [
     {playerName: 'Bolzenschneiderr', name: 'Jano', uuid: '9819fc02-6cfc-48c9-a92f-ef609de5fcbc', admin: false},
     {playerName: 'Pandicorn07', name: 'Lara', uuid: '5baf6696-1ec4-46ec-b1a3-8989e771db50', admin: false},
     {playerName: 'Dzenan212', name: 'Dzenan', uuid: '18632fb6-2507-443e-8d0e-34d8c30b8d19', admin: false},
+    {playerName: 'KraftLegende', name: 'Niclas', uuid: 'bdc8fefc-585d-4c90-a61c-cd10654b7fde', admin: false},
 ]
 
 

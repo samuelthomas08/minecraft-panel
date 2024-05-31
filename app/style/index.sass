@@ -59,7 +59,7 @@ img
 .basic
   background-color: #ffd83b
   padding: 2rem
-  border-radius: 2rem
+  border-radius: 1rem
   display: flex
   flex-direction: column
   gap: 0.8rem
@@ -70,7 +70,7 @@ img
 
 .members
   width: 25rem
-  border-radius: 2rem
+  border-radius: 1rem
   display: flex
   flex-direction: column
   gap: .75rem
@@ -165,7 +165,7 @@ img
   background-color: #ffd83b
   padding: 1.5rem
   width: 22rem
-  border-radius: 2rem
+  border-radius: 1rem
   display: flex
   align-items: center
   justify-content: space-around
@@ -191,7 +191,7 @@ img
     padding: 2rem
     background-color: #0f1813
     width: 25rem
-    border-radius: 2rem
+    border-radius: 1rem
 
     h1
       color: #1bd96a
@@ -229,10 +229,12 @@ img
         align-items: center
         margin-top: 1rem
         gap: .25rem
-        color: #bbc3bf
+        color: #ffffff
+        font-weight: 500
+        width: 4rem
         &:hover
           cursor: pointer
-          text-decoration: underline
+          
         i
           font-size: .7rem
           width: 1.2rem
@@ -282,19 +284,55 @@ img
       font-weight: 900
       text-decoration: none
 
+.no-scroll
+  overflow: hidden !important
+
 .help-modal
-  height: 70vh
+  height: 60vh
   width: 50rem
   background-color: #0f1813
   position: absolute
-  border-radius: 2rem
+  border-radius: 1rem
   padding: 2rem
   color: white
   z-index: 101
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
+  display: none
+  overflow: scroll
+  overflow-x: hidden
+  &::-webkit-scrollbar 
+    width: 12px
+    height: 12px
+  &::-webkit-scrollbar-thumb 
+    background-color: #45554d
+    border-radius: 1rem
 
+  &::-webkit-scrollbar-track 
+    background: #0f1813
+    border-radius: 0 1rem 1rem 0
+
+  @media screen and (max-width: 1920px)
+    height: 84vh
+  .head
+    display: flex
+    align-items: center
+    justify-content: space-between
+    i
+      font-size: 2rem
+      transition: 150ms
+      &:hover
+        color: red
+        cursor: pointer
+  .expl
+    margin-top: 1rem
+    img
+      border-radius: .5rem
+      margin-top: 1rem
+      margin-bottom: 1rem
+    p
+      margin-top: .5rem
   a
     color: #1bd96a
 
@@ -307,4 +345,6 @@ img
   background-color: #594809ca
   z-index: 100
   pointer-events: none
-  // display: none
+  display: none
+  cursor: default !important
+

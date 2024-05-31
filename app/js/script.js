@@ -4,7 +4,11 @@ const onlinePlayer = document.querySelector('.on-players span');
 const serverState = document.querySelector('.server-state span');
 const memberList = document.querySelector('.member-list');
 const backupListEl = document.querySelector('.backup-list');
-
+const helpBtn = document.querySelector('.help-btn');
+const modalOverlay = document.querySelector('.overlay');
+const modal = document.querySelector('.help-modal');
+const modalClose = document.querySelector('.fa-xmark');
+const container = document.querySelector('.container');
 
 // Create a list with all members
 
@@ -30,6 +34,26 @@ const backupList = [
 // Reverse the list of backups, so the current one is always shown at first
 
 backupList.reverse();
+
+
+// Setup the Modal Click function
+
+$(helpBtn).click(() => {
+    $(modalOverlay).show();
+    $(modal).show();
+    memberList.style.overflowY = "hidden";
+    backupListEl.style.overflowY = "hidden";
+    container.style.overflowY = "hidden";
+});
+
+$(modalClose).click(() => {
+    $(modal).hide();
+    $(modalOverlay).hide();
+    memberList.classList.remove('.no-scroll');
+    memberList.style.overflowY = "scroll";
+    backupListEl.style.overflowY = "scroll";
+    container.style.overflowY = "scroll";
+});
 
 
 // Looping through the list of players and create cards with their names and player heads

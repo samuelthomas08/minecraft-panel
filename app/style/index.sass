@@ -205,25 +205,44 @@ img
       height: 2rem
 
     .pack-view
-      display: flex
-      gap: .75rem
       color: white
-      margin-top: 1rem
+      .pack
+        display: flex
+        gap: .75rem
+        color: white
+        margin-top: 1rem
+        img
+          width: 4rem
+          height: 4rem
+          border-radius: 1rem
+        .text
+          margin-left: .5rem
+          .info
+            display: flex
+            gap: 1.5rem
+            a
+              color: #1bd96a
 
-      img
-        width: 4rem
-        height: 4rem
-        border-radius: 1rem
-
-      .text
-        margin-left: .5rem
-
-        .info
+      .help-btn
+        font-size: 1rem
+        display: flex
+        align-items: center
+        margin-top: 1rem
+        gap: .25rem
+        color: #bbc3bf
+        &:hover
+          cursor: pointer
+          text-decoration: underline
+        i
+          font-size: .7rem
+          width: 1.2rem
+          height: 1.2rem
+          border: 1px solid
           display: flex
-          gap: 1.5rem
-
-          a
-            color: #1bd96a
+          align-items: center
+          justify-content: center
+          border-radius: 50%
+          padding-bottom: .1rem
 
   .tp
     margin-top: 2rem
@@ -263,4 +282,29 @@ img
       font-weight: 900
       text-decoration: none
 
+.help-modal
+  height: 70vh
+  width: 50rem
+  background-color: #0f1813
+  position: absolute
+  border-radius: 2rem
+  padding: 2rem
+  color: white
+  z-index: 101
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
 
+  a
+    color: #1bd96a
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: #594809ca
+  z-index: 100
+  pointer-events: none
+  // display: none

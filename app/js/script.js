@@ -9,12 +9,12 @@ const modalOverlay = document.querySelector('.overlay');
 const modal = document.querySelector('.help-modal');
 const modalClose = document.querySelector('.fa-xmark');
 const container = document.querySelector('.container');
+const logoLetter = document.querySelector('.logo-letter');
+const logo = document.querySelector('logo-img');
 
 const part01 = document.querySelector('.part01');
 const part02 = document.querySelector('.part02');
 const part03 = document.querySelector('.part03');
-
-
 
 
 // Create a list with all members
@@ -155,14 +155,24 @@ backupList.forEach(element => {
 
 // Animations with GSAP
 
-const partFadeIn = gsap.timeline({ paused: true });
-const memberFadeIn = gsap.timeline();
 
-memberFadeIn.from('.member-item', { x: -100, stagger: 0.1, duration: 0.5, opacity: 0, ease: 'expo.out', delay: 0.3 });
-partFadeIn.from('.part', {y: -200, stagger: 0.2, duration: 1, opacity: 0, ease: 'expo.out'});
+document.addEventListener("DOMContentLoaded", (event) => {
+    const partFadeIn = gsap.timeline({ delay: 0.8 });
+    const memberFadeIn = gsap.timeline({ delay: 0.3 });
+    const logoFadeIn = gsap.timeline({});
 
-partFadeIn.play();
-memberFadeIn.play();
+    memberFadeIn.from('.member-item', { x: -100, stagger: 0.1, duration: 0.5, opacity: 0, ease: 'expo.out' });
+
+    partFadeIn.from('.part', {y: -200, stagger: 0.2, duration: 1, opacity: 0, ease: 'expo.out'});
+
+    logoFadeIn.from('.logo-img', {y: -100, stagger: 0.2, duration: 0.5, opacity: 0, ease: 'expo.out'});
+    logoFadeIn.from('.logo-letter', {y: -20, stagger: 0.2, duration: 1, opacity: 0, ease: 'expo.out'});
+
+    partFadeIn.play();
+    memberFadeIn.play();
+});
+
+
 
 
 // Create an interval, in which all the server specific information gets updated

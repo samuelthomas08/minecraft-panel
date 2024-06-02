@@ -10,6 +10,16 @@ const modal = document.querySelector('.help-modal');
 const modalClose = document.querySelector('.fa-xmark');
 const container = document.querySelector('.container');
 
+const part01 = document.querySelector('.part01');
+const part02 = document.querySelector('.part02');
+const part03 = document.querySelector('.part03');
+
+
+// Animations with GSAP
+
+const partFadeIn = gsap.timeline();
+
+
 // Create a list with all members
 
 const playerList = [
@@ -23,7 +33,6 @@ const playerList = [
     {playerName: 'Dzenan212', name: 'Dzenan', uuid: '18632fb6-2507-443e-8d0e-34d8c30b8d19', admin: false},
     {playerName: 'KraftLegende', name: 'Niclas', uuid: 'bdc8fefc-585d-4c90-a61c-cd10654b7fde', admin: false},
 ]
-
 
 // Create a list with all the backups
 

@@ -1,3 +1,7 @@
+$(document).ready(() => {
+    
+});
+
 // Initialize all HTML Elements
 
 const onlinePlayer = document.querySelector('.on-players span');
@@ -18,7 +22,7 @@ const part03 = document.querySelector('.part03');
 
 
 const modalFadeIn = gsap.timeline({paused: true});
-modalFadeIn.from(modalOverlay, {y: -1440})
+modalFadeIn.from(modalOverlay, {opacity: 0, duration: 0.5})
 modalFadeIn.from(modal, { height: 0, width: 0, duration: 1, opacity: 0, ease: 'power3.out', delay: -0.3 });
 modalFadeIn.from('.head', { y: -20, duration: 1, opacity: 0, ease: 'power3.out', delay: -0.7 });
 modalFadeIn.from('.expl', { y: -20, duration: 1, opacity: 0, ease: 'power3.out', delay: -0.7 });

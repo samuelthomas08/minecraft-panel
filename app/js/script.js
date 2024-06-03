@@ -17,6 +17,12 @@ const part02 = document.querySelector('.part02');
 const part03 = document.querySelector('.part03');
 
 
+const modalFadeIn = gsap.timeline({paused: true});
+modalFadeIn.from(modalOverlay, {y: -1440})
+modalFadeIn.from(modal, { height: 0, width: 0, duration: 1, opacity: 0, ease: 'power3.out', delay: -0.3 });
+modalFadeIn.from('.head', { y: -20, duration: 1, opacity: 0, ease: 'power3.out', delay: -0.7 });
+modalFadeIn.from('.expl', { y: -20, duration: 1, opacity: 0, ease: 'power3.out', delay: -0.7 });
+
 // Create a list with all members
 
 const playerList = [
@@ -50,15 +56,20 @@ $(helpBtn).click(() => {
     memberList.style.overflowY = "hidden";
     backupListEl.style.overflowY = "hidden";
     container.style.overflowY = "hidden";
+    modalFadeIn.play();
 });
 
 $(modalClose).click(() => {
-    $(modal).hide();
-    $(modalOverlay).hide();
-    memberList.classList.remove('.no-scroll');
-    memberList.style.overflowY = "scroll";
-    backupListEl.style.overflowY = "scroll";
-    container.style.overflowY = "scroll";
+    modalFadeIn.reverse().then(() => {
+        $(modal).hide();
+        $(modalOverlay).hide();
+        memberList.classList.remove('.no-scroll');
+        memberList.style.overflowY = "scroll";
+        backupListEl.style.overflowY = "scroll";
+        container.style.overflowY = "scroll";
+    });
+    
+    
 });
 
 
@@ -157,6 +168,7 @@ backupList.forEach(element => {
 
 
 document.addEventListener("DOMContentLoaded", event => {
+    // MAIN PAGE
     const partFadeIn = gsap.timeline({ delay: 1 });
     const memberFadeIn = gsap.timeline({ delay: 1.2 });
     const logoFadeIn = gsap.timeline({});
@@ -168,8 +180,9 @@ document.addEventListener("DOMContentLoaded", event => {
     logoFadeIn.from('.logo-img', {y: -100, stagger: 0.2, duration: 0.5, opacity: 0, ease: 'expo.out'});
     logoFadeIn.from('.logo-letter', {y: -20, stagger: 0.2, duration: 0.5, opacity: 0, ease: 'expo.out'});
 
-    partFadeIn.play();
-    memberFadeIn.play();
+    // MODAL
+
+    
 });
 
 

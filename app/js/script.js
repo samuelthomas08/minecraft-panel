@@ -53,9 +53,9 @@ backupList.reverse();
 $(helpBtn).click(() => {
     $(modalOverlay).show();
     $(modal).show();
-    memberList.style.overflowY = "hidden";
-    backupListEl.style.overflowY = "hidden";
-    container.style.overflowY = "hidden";
+    // memberList.style.overflowY = "hidden";
+    // backupListEl.style.overflowY = "hidden";
+    // container.style.overflowY = "hidden";
     modalFadeIn.play();
 });
 
@@ -63,10 +63,9 @@ $(modalClose).click(() => {
     modalFadeIn.reverse().then(() => {
         $(modal).hide();
         $(modalOverlay).hide();
-        memberList.classList.remove('.no-scroll');
-        memberList.style.overflowY = "scroll";
-        backupListEl.style.overflowY = "scroll";
-        container.style.overflowY = "scroll";
+        // memberList.style.overflowY = "scroll";
+        // backupListEl.style.overflowY = "scroll";
+        // container.style.overflowY = "scroll";
     });
     
     

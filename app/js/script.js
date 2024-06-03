@@ -156,9 +156,9 @@ backupList.forEach(element => {
 // Animations with GSAP
 
 
-document.addEventListener("DOMContentLoaded", (event) => {
-    const partFadeIn = gsap.timeline({ delay: 0.8 });
-    const memberFadeIn = gsap.timeline({ delay: 1 });
+document.addEventListener("DOMContentLoaded", event => {
+    const partFadeIn = gsap.timeline({ delay: 1 });
+    const memberFadeIn = gsap.timeline({ delay: 1.2 });
     const logoFadeIn = gsap.timeline({});
 
     memberFadeIn.from('.member-item', { x: -100, stagger: 0.1, duration: 0.5, opacity: 0, ease: 'expo.out' });
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     partFadeIn.from('.part', { y: -200, stagger: 0.2, duration: 1, opacity: 0, ease: 'expo.out' });
 
     logoFadeIn.from('.logo-img', {y: -100, stagger: 0.2, duration: 0.5, opacity: 0, ease: 'expo.out'});
-    logoFadeIn.from('.logo-letter', {y: -20, stagger: 0.2, duration: 1, opacity: 0, ease: 'expo.out'});
+    logoFadeIn.from('.logo-letter', {y: -20, stagger: 0.2, duration: 0.5, opacity: 0, ease: 'expo.out'});
 
     partFadeIn.play();
     memberFadeIn.play();

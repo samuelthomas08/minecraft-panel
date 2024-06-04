@@ -22,8 +22,8 @@ const part03 = document.querySelector('.part03');
 
 
 const modalFadeIn = gsap.timeline({paused: true});
-modalFadeIn.from(modalOverlay, {opacity: 0, duration: 0.5})
-modalFadeIn.from(modal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out', delay: -0.3 });
+modalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.5 })
+modalFadeIn.from(modal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out' });
 modalFadeIn.from('.head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.2 });
 modalFadeIn.from('.expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.3 });
 
@@ -39,6 +39,8 @@ const playerList = [
     {playerName: 'Pandicorn07', name: 'Lara', uuid: '5baf6696-1ec4-46ec-b1a3-8989e771db50', admin: false},
     {playerName: 'Dzenan212', name: 'Dzenan', uuid: '18632fb6-2507-443e-8d0e-34d8c30b8d19', admin: false},
     {playerName: 'KraftLegende', name: 'Niclas', uuid: 'bdc8fefc-585d-4c90-a61c-cd10654b7fde', admin: false},
+    {playerName: 'finnflip', name: 'Finn', uuid: '533c8983-349e-420a-89cc-368e6c5397c2', admin: false},
+    {playerName: 'Mohiiiii', name: 'Ali', uuid: 'eeb01a0c-cb44-4f58-911e-4c7e1765856f', admin: false},
 ]
 
 // Create a list with all the backups

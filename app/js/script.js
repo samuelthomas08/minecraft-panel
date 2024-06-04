@@ -22,8 +22,8 @@ const part03 = document.querySelector('.part03');
 
 
 const modalFadeIn = gsap.timeline({paused: true});
-modalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.5 })
-modalFadeIn.from(modal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out' });
+modalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.25 })
+modalFadeIn.from(modal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out', delay: -0.2 });
 modalFadeIn.from('.head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.2 });
 modalFadeIn.from('.expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.3 });
 

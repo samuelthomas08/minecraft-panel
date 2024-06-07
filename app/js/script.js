@@ -32,6 +32,7 @@ modalFadeIn.from('.expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out
 const playerList = [
     {playerName: 'JuniorCoder', name: 'Sam', uuid: 'e44f919d-9ee9-43c5-832d-ed81a856baf0', admin: true},
     {playerName: 'Ajdin1412', name: 'Ajdin', uuid: '8483c55d-d65c-4f5d-8337-23debe6e0cd5', admin: true},
+    {playerName: 'Habubabu08', name: 'Simon', uuid: '77ef5df3-bdd2-4d10-9ad5-cf515b05dcff', admin: true},
     {playerName: 'KPM_NONO', name: 'Noah', uuid: 'ce047b36-8ea3-4761-aa7e-d73241ecfb65', admin: false},
     {playerName: 'Zorro_14', name: 'Marcel', uuid: 'd2fa327c-a21b-48a5-8574-455b16f2b6dd', admin: false},
     {playerName: 'MasterJojo2107', name: 'Jona', uuid: 'a36333c3-dde3-4104-8c9b-986f23568d62', admin: false},

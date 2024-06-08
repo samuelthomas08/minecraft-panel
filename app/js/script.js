@@ -49,7 +49,7 @@ const playerList = [
 
 const backupList = [
     // {count: 1, date: '01.01.2000', size: 1.2, file: 'backup_0001'},
-]
+];
 
 // Reverse the list of backups, so the current one is always shown at first
 

@@ -103,7 +103,7 @@ playerList.forEach(element => {
         adminTag.innerText = 'ADMIN';
         adminTag.classList.add('admin');
 
-        playerTitle.appendChild(adminTag)
+        playerTitle.appendChild(adminTag);
     }
 
     container.appendChild(img);

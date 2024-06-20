@@ -44,6 +44,7 @@ const playerList = [
     {playerName: 'Mohiiiii', name: 'Ali', uuid: 'eeb01a0c-cb44-4f58-911e-4c7e1765856f', admin: false},
     {playerName: 'ZimmerGans27242', name: 'Luca', uuid: '175ffb55-2934-4606-b029-d881f28de3e3', admin: false},
     {playerName: 'Warross3000', name: 'Florian', uuid: '68065989-d898-47a5-a732-2bbfd415c853', admin: false},
+    {playerName: 'Klein_Popo', name: 'Kiki', uuid: '8b7b977d-0e94-4889-a3bb-f5dccf6a8fbd', admin: false},
 ]
 
 // Create a list with all the backups

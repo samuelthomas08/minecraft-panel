@@ -1,7 +1,6 @@
-# Basic Dev-Env
+# Minecraft Panel
 
-This is the basic dev-env, for the **create-project-command**. This is a template, how it looks, if you create a new project by
-the command.
+Minecraft Panel to catch some information from a minecraft server.
 
 ## IMPORTANT
 

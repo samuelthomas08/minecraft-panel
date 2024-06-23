@@ -1,7 +1,3 @@
-$(document).ready(() => {
-    
-});
-
 // Initialize all HTML Elements
 
 const onlinePlayer = document.querySelector('.on-players span');
@@ -11,10 +7,11 @@ const backupListEl = document.querySelector('.backup-list');
 const helpBtn = document.querySelector('.help-btn');
 const modalOverlay = document.querySelector('.overlay');
 const modal = document.querySelector('.help-modal');
-const modalClose = document.querySelector('.fa-xmark');
+const modalClose = document.querySelector('.help-modal .fa-xmark');
 const container = document.querySelector('.container');
 const logoLetter = document.querySelector('.logo-letter');
 const logo = document.querySelector('logo-img');
+const shopModal = document.querySelector('.shop-modal');
 
 const part01 = document.querySelector('.part01');
 const part02 = document.querySelector('.part02');
@@ -24,8 +21,8 @@ const part03 = document.querySelector('.part03');
 const modalFadeIn = gsap.timeline({paused: true});
 modalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.25 })
 modalFadeIn.from(modal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out', delay: -0.2 });
-modalFadeIn.from('.head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.25 });
-modalFadeIn.from('.expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.35 });
+modalFadeIn.from('.help-modal .head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.25 });
+modalFadeIn.from('.help-modal .expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.35 });
 
 // Create a list with all members
 
@@ -49,6 +46,7 @@ const playerList = [
     {playerName: 'sweetapple0077', name: 'Eric', uuid: 'e1b00cc1-477f-4361-bf47-6857b8393188', admin: false},
     {playerName: 'Justas666', name: 'Justas', uuid: 'f019e5b2-3f15-4dd4-9c98-44105843e480', admin: false},
     {playerName: 'FlamongoABI', name: 'Majus', uuid: '940ce9db-edd6-44dd-8a2c-0ea0579883c4', admin: false},
+    {playerName: 'Kingpin27cm', name: 'Philipp', uuid: 'c4ef1c3a-c76a-4bd6-8bb2-3b0d9c94f6d7', admin: false},
 ]
 
 // Create a list with all the backups
@@ -56,6 +54,12 @@ const playerList = [
 const backupList = [
     // {count: 1, date: '01.01.2000', size: 1.2, file: 'backup_0001'},
 ];
+
+
+const shopList = [
+    {shopTitle: 'Rakete', creator: ['Kiki']},
+    {shopTitle: 'Puff', creator: ['Philipp', 'Jona']},
+]
 
 // Reverse the list of backups, so the current one is always shown at first
 
@@ -81,6 +85,45 @@ $(modalClose).click(() => {
         // backupListEl.style.overflowY = "scroll";
         // container.style.overflowY = "scroll";
     });    
+});
+
+
+// Looping through the shopList to fill the Shopping District modal
+
+shopList.forEach(el => {
+    const shopItem = document.createElement('div');
+    shopItem.classList.add('shop-item');
+
+    const shopTitle = document.createElement('h2');
+    shopTitle.innerText = el.shopTitle;
+
+    const creatorList = document.createElement('div');
+    creatorList.classList.add('creator-list');
+
+    let info = [];
+    playerList.forEach(player => {
+        if (el.creator.includes(player.name)) {
+            info.push({name: player.name, src: `https://crafatar.com/avatars/${player.uuid}`});
+        }
+    });
+    
+    info.forEach(creators => {
+        const infoBox = document.createElement('div');
+        const creatorName = document.createElement('p');
+        const creatorHead = document.createElement('img');
+
+        creatorName.innerText = creators.name;
+        creatorHead.src = creators.src;
+
+        infoBox.appendChild(creatorHead);
+        infoBox.appendChild(creatorName);
+
+        creatorList.appendChild(infoBox);
+    });
+    
+    shopItem.appendChild(shopTitle);
+    shopItem.appendChild(creatorList);
+    shopModal.appendChild(shopItem);
 });
 
 

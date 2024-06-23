@@ -11,7 +11,9 @@ const modalClose = document.querySelector('.help-modal .fa-xmark');
 const container = document.querySelector('.container');
 const logoLetter = document.querySelector('.logo-letter');
 const logo = document.querySelector('logo-img');
-const shopModal = document.querySelector('.shop-modal .list');
+const shopModalList = document.querySelector('.shop-modal .list');
+const shopModal = document.querySelector('.shop-modal');
+const openShopModalBtn = document.querySelector('.modal-btn');
 
 const part01 = document.querySelector('.part01');
 const part02 = document.querySelector('.part02');
@@ -23,6 +25,14 @@ modalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.25 })
 modalFadeIn.from(modal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out', delay: -0.2 });
 modalFadeIn.from('.help-modal .head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.25 });
 modalFadeIn.from('.help-modal .expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.35 });
+
+
+const shopModalFadeIn = gsap.timeline();
+shopModalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.25 })
+shopModalFadeIn.from(shopModal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out', delay: -0.2 });
+shopModalFadeIn.from('.shop-modal .head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.25 });
+shopModalFadeIn.from('.shop-modal .expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.35 });
+shopModalFadeIn.from('.shop-modal .list', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.45 });
 
 // Create a list with all members
 
@@ -108,7 +118,7 @@ shopList.forEach(el => {
 
     playerList.forEach(player => {
         if (el.creator.includes(player.name)) {
-            console.log('test');
+
             info.push({name: player.name, src: `https://crafatar.com/avatars/${player.uuid}`});
         }
     });
@@ -140,14 +150,13 @@ shopList.forEach(el => {
 
         creatorHeadArray.push(creatorHead);
 
-        console.log(infoBox);
     });
    
     creatorList.appendChild(infoBox);
 
     shopItem.appendChild(shopTitle);
     shopItem.appendChild(creatorList);
-    shopModal.appendChild(shopItem);
+    shopModalList.appendChild(shopItem);
 });
 
 
@@ -197,8 +206,6 @@ playerList.forEach(element => {
 backupList.forEach(element => {
     const backupItem = document.createElement('div');
     backupItem.classList.add('item');
-
-    console.log(backupItem);
 
     const heading = document.createElement('h2');
 

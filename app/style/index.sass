@@ -349,9 +349,9 @@ img
   a
     color: #1bd96a
 
-.help-modal
+.shop-modal
   height: 62vh
-  width: 50rem
+  width: 30rem
   background-color: #0f1813
   position: absolute
   border-radius: 1rem
@@ -361,7 +361,7 @@ img
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
-  display: none
+  // display: none
   overflow: scroll
   overflow-x: hidden
   &::-webkit-scrollbar 
@@ -389,17 +389,27 @@ img
       &:hover
         color: red
         cursor: pointer
-  .expl
+  .list
+    display: flex
+    flex-direction: column
     margin-top: 1rem
-    img
-      border-radius: .5rem
-      margin-top: 1rem
-      margin-bottom: 1rem
-    p
-      margin-top: .5rem
-  a
-    color: #1bd96a
-
+    gap: 1rem
+  .info-box
+    display: flex
+    flex-direction: row
+    margin-top: .5rem
+    gap: 1rem
+  .shop-item
+    width: 20rem
+    background-color: #202c25
+    padding: .5rem
+    border-radius: .5rem
+    .creator
+      display: flex
+      align-items: center
+      gap: .5rem
+      img
+        width: 1.5rem
 
 .overlay
   position: fixed

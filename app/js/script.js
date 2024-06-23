@@ -11,7 +11,7 @@ const modalClose = document.querySelector('.help-modal .fa-xmark');
 const container = document.querySelector('.container');
 const logoLetter = document.querySelector('.logo-letter');
 const logo = document.querySelector('logo-img');
-const shopModal = document.querySelector('.shop-modal');
+const shopModal = document.querySelector('.shop-modal .list');
 
 const part01 = document.querySelector('.part01');
 const part02 = document.querySelector('.part02');
@@ -57,9 +57,13 @@ const backupList = [
 
 
 const shopList = [
-    {shopTitle: 'Rakete', creator: ['Kiki']},
+    {shopTitle: 'Raketenshop', creator: ['Kiki']},
     {shopTitle: 'Puff', creator: ['Philipp', 'Jona']},
-]
+    {shopTitle: 'Shulkerboxshop', creator: ['Sam']},
+    {shopTitle: 'Elytrashop', creator: ['Jano']},
+    {shopTitle: 'TNT-Shop', creator: ['Ajdin']},
+    {shopTitle: 'Waffenshop', creator: ['Eric']},
+    ]
 
 // Reverse the list of backups, so the current one is always shown at first
 
@@ -101,26 +105,46 @@ shopList.forEach(el => {
     creatorList.classList.add('creator-list');
 
     let info = [];
+
     playerList.forEach(player => {
         if (el.creator.includes(player.name)) {
+            console.log('test');
             info.push({name: player.name, src: `https://crafatar.com/avatars/${player.uuid}`});
         }
     });
+
+
+    info.filter((item,
+        index) => info.indexOf(item) === index);
+
+
+    let creatorHeadArray = [];
+
+    const infoBox = document.createElement('div');
+    infoBox.classList.add('info-box');
+    
     
     info.forEach(creators => {
-        const infoBox = document.createElement('div');
         const creatorName = document.createElement('p');
         const creatorHead = document.createElement('img');
+        const creator = document.createElement('div');
+        creator.classList.add('creator');
 
         creatorName.innerText = creators.name;
         creatorHead.src = creators.src;
 
-        infoBox.appendChild(creatorHead);
-        infoBox.appendChild(creatorName);
+        creator.appendChild(creatorHead);
+        creator.appendChild(creatorName);
 
-        creatorList.appendChild(infoBox);
+        infoBox.appendChild(creator);
+
+        creatorHeadArray.push(creatorHead);
+
+        console.log(infoBox);
     });
-    
+   
+    creatorList.appendChild(infoBox);
+
     shopItem.appendChild(shopTitle);
     shopItem.appendChild(creatorList);
     shopModal.appendChild(shopItem);

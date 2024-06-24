@@ -8,6 +8,7 @@ const helpBtn = document.querySelector('.help-btn');
 const modalOverlay = document.querySelector('.overlay');
 const modal = document.querySelector('.help-modal');
 const modalClose = document.querySelector('.help-modal .fa-xmark');
+const shopModalClose = document.querySelector('.shop-modal .fa-xmark');
 const container = document.querySelector('.container');
 const logoLetter = document.querySelector('.logo-letter');
 const logo = document.querySelector('logo-img');
@@ -27,7 +28,7 @@ modalFadeIn.from('.help-modal .head', { y: -20, duration: 0.5, opacity: 0, ease:
 modalFadeIn.from('.help-modal .expl', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.35 });
 
 
-const shopModalFadeIn = gsap.timeline();
+const shopModalFadeIn = gsap.timeline({paused: true});
 shopModalFadeIn.from(modalOverlay, { opacity: 0, duration: 0.25 })
 shopModalFadeIn.from(shopModal, { height: 0, width: 0, duration: 0.3, opacity: 0, ease: 'power3.out', delay: -0.2 });
 shopModalFadeIn.from('.shop-modal .head', { y: -20, duration: 0.5, opacity: 0, ease: 'power3.out', delay: -0.25 });
@@ -57,6 +58,8 @@ const playerList = [
     {playerName: 'Justas666', name: 'Justas', uuid: 'f019e5b2-3f15-4dd4-9c98-44105843e480', admin: false},
     {playerName: 'FlamongoABI', name: 'Majus', uuid: '940ce9db-edd6-44dd-8a2c-0ea0579883c4', admin: false},
     {playerName: 'Kingpin27cm', name: 'Philipp', uuid: 'c4ef1c3a-c76a-4bd6-8bb2-3b0d9c94f6d7', admin: false},
+    {playerName: 'MorgenLeFay', name: 'Vio', uuid: '37a56c21-984c-4e80-b363-155ee5a4bd64', admin: false},
+    {playerName: 'xFishyGamerx', name: 'Vincent', uuid: '54b1a521-a96e-4d8a-a49e-2f9868b2e5b5', admin: false},
 ]
 
 // Create a list with all the backups
@@ -79,26 +82,62 @@ const shopList = [
 
 backupList.reverse();
 
+let shopModalToggle = false;
+let helpModalToggle = false;
 
 // Setup the Modal Click function
 
 $(helpBtn).click(() => {
-    $(modalOverlay).show();
-    $(modal).show();
-    // memberList.style.overflowY = "hidden";
-    // backupListEl.style.overflowY = "hidden";
-    // container.style.overflowY = "hidden";
-    modalFadeIn.play();
+    if(shopModalToggle) {
+        shopModalFadeIn.reverse().then(() => {
+            $(modalOverlay).hide();
+            $(shopModal).hide();
+        });
+    }
+
+    setTimeout(() => {
+        $(modalOverlay).show();
+        $(modal).show();
+    
+        modalFadeIn.play();
+    
+        helpModalToggle = true;
+    }, 500)
 });
 
 $(modalClose).click(() => {
     modalFadeIn.reverse().then(() => {
         $(modal).hide();
         $(modalOverlay).hide();
-        // memberList.style.overflowY = "scroll";
-        // backupListEl.style.overflowY = "scroll";
-        // container.style.overflowY = "scroll";
-    });    
+    });
+
+    helpModalToggle = false;
+});
+
+$(openShopModalBtn).click(() => {
+    if(helpModalToggle) {
+        modalFadeIn.reverse().then(() => {
+            $(modal).hide();
+            $(modalOverlay).hide();
+        });
+    }
+    setTimeout(() => {
+        $(shopModal).show();
+        $(modalOverlay).show();
+        shopModalFadeIn.play();
+    
+        shopModalToggle = true;
+    }, 500)
+});
+
+$(shopModalClose).click(() => {
+    shopModalFadeIn.reverse().then(() => {
+        $(modalOverlay).hide();
+        $(shopModal).hide();
+    });
+    
+    shopModalToggle = false;
+
 });
 
 

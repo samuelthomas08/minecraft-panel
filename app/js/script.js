@@ -75,7 +75,6 @@ const shopList = [
     {shopTitle: 'Shulkerboxshop', creator: ['Sam']},
     {shopTitle: 'Elytrashop', creator: ['Jano']},
     {shopTitle: 'TNT-Shop', creator: ['Ajdin']},
-    {shopTitle: 'Waffenshop', creator: ['Eric']},
     ]
 
 // Reverse the list of backups, so the current one is always shown at first

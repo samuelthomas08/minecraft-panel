@@ -58,7 +58,7 @@ const playerList = [
     {playerName: 'Justas666', name: 'Justas', uuid: 'f019e5b2-3f15-4dd4-9c98-44105843e480', admin: false},
     {playerName: 'FlamongoABI', name: 'Majus', uuid: '940ce9db-edd6-44dd-8a2c-0ea0579883c4', admin: false},
     {playerName: 'Kingpin27cm', name: 'Philipp', uuid: 'c4ef1c3a-c76a-4bd6-8bb2-3b0d9c94f6d7', admin: false},
-    {playerName: 'MorgenLeFay', name: 'Vio', uuid: '37a56c21-984c-4e80-b363-155ee5a4bd64', admin: false},
+    {playerName: 'MorganLeFay_', name: 'Vio', uuid: '0115c6b6-4aa0-4ee0-99fb-32dfe6592de4', admin: false},
     {playerName: 'xFishyGamerx', name: 'Vincent', uuid: '54b1a521-a96e-4d8a-a49e-2f9868b2e5b5', admin: false},
 ]
 

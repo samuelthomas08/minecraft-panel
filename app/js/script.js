@@ -65,7 +65,7 @@ const playerList = [
 // Create a list with all the backups
 
 const backupList = [
-    // {count: 1, date: '01.01.2000', size: 1.2, file: 'backup_0001'},
+    {count: 1, date: '01.01.2000', size: 1.21, file: 'backup_0001'},
 ];
 
 

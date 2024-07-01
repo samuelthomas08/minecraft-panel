@@ -54,7 +54,7 @@ const playerList = [
     {playerName: 'Warross3000', name: 'Florian', uuid: '68065989-d898-47a5-a732-2bbfd415c853', admin: false},
     {playerName: 'Klein_Popo', name: 'Kiki', uuid: '8b7b977d-0e94-4889-a3bb-f5dccf6a8fbd', admin: false},
     {playerName: 'TrueWLAN', name: 'Maxim', uuid: 'a98895b4-4717-49d9-a214-2db255c6ebc0', admin: false},
-    {playerName: 'sweetapple0077', name: 'Eric', uuid: 'e1b00cc1-477f-4361-bf47-6857b8393188', admin: false},
+    {playerName: 'sweetapple0077', name: 'Erik', uuid: 'e1b00cc1-477f-4361-bf47-6857b8393188', admin: false},
     {playerName: 'Justas666', name: 'Justas', uuid: 'f019e5b2-3f15-4dd4-9c98-44105843e480', admin: false},
     {playerName: 'FlamongoABI', name: 'Majus', uuid: '940ce9db-edd6-44dd-8a2c-0ea0579883c4', admin: false},
     {playerName: 'Kingpin27cm', name: 'Philipp', uuid: 'c4ef1c3a-c76a-4bd6-8bb2-3b0d9c94f6d7', admin: false},

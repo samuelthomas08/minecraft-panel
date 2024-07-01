@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
 // Create an interval, in which all the server specific information gets updated
 
-// MinecraftAPI.getServerStatus('buzz.blossomcraft.org', function (err, status) {
-//     onlinePlayer.innerHTML = status.players.now > 0 ? status.players.now : "Niemand"
-//     serverState.innerHTML = status.online ? 'Online' : 'Offline';
-// });
+MinecraftAPI.getServerStatus('87.98.173.108:25586', function (err, status) {
+    onlinePlayer.innerHTML = status.players.now > 0 ? status.players.now : "Niemand"
+    serverState.innerHTML = status.online ? 'Online' : 'Offline';
+});

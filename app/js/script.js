@@ -65,7 +65,7 @@ const playerList = [
 // Create a list with all the backups
 
 const backupList = [
-    {count: 1, date: '01.01.2000', size: 1.21, file: 'backup_0001'},
+    {count: 1, date: '01.01.2000', size: 0.98, file: 'backup_0001'},
 ];
 
 
@@ -277,7 +277,7 @@ backupList.forEach(element => {
     const downloadLink = document.createElement('a');
     downloadLink.classList.add('download');
     downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Download'));
-    downloadLink.setAttribute('download', `./assets/${element.file}`);
+    downloadLink.setAttribute('download', `./assets/${element.file}.zip`);
     downloadLink.innerHTML = '<i class="fa-solid fa-download"></i>';
 
     backupItem.appendChild(infoBox);
